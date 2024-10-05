@@ -1,4 +1,5 @@
-const express = require('express')
+const express = require('express');
+
 const cors = require('cors')
 const app = express()
 var bodyParser = require('body-parser'); 
@@ -16,7 +17,7 @@ const userRoute = require('./routes/user.route')
 
 
  
- app.get('/', (req, res) => { 
+ app.get('/', (req, res) => {
      // res.send('this is practice server')
      res.send("hello server")
     });
@@ -24,8 +25,7 @@ const userRoute = require('./routes/user.route')
 
 app.use((req, res, next)=> {
      res.status(404).json({ 
-        message: "404 not found",
-        
+        message: "404 not found", 
      })
 })
 
@@ -36,9 +36,6 @@ app.use((err, req, res, next) => {
         error: err.message,
     });
 });
+  
  
-
-
-
-
 module.exports = app;
